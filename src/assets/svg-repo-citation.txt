@@ -1,0 +1,9 @@
+AUTHOR: Kenan Gundogan - Php SVG Vector - https://www.svgrepo.com/svg/394345/php
+AUTHOR: jtblabs - Laravel SVG Vector - https://www.svgrepo.com/svg/473693/laravel
+AUTHOR: lawnchairlauncher - Messenger SVG Vector - https://www.svgrepo.com/svg/504573/messenger
+AUTHOR: bypeople - Javascript 155 SVG Vector - https://www.svgrepo.com/svg/512400/javascript-155
+AUTHOR: bypeople - Github 142 SVG Vector - https://www.svgrepo.com/svg/512317/github-142
+AUTHOR: jtblabs - React SVG Vector - https://www.svgrepo.com/svg/473768/react
+AUTHOR: jtblabs - Firebase SVG Vector - https://www.svgrepo.com/svg/473606/firebase
+AUTHOR: Konstantin Filatov - Facebook SVG Vector - https://www.svgrepo.com/svg/521654/facebook
+AUTHOR: Yan Liu - Chococat SVG Vector - https://www.svgrepo.com/svg/436012/chococat 
