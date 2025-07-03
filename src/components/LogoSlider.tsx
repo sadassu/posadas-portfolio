@@ -2,11 +2,11 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 const logos = [
-  "/src/assets/tech-logo/javascript.svg",
-  "/src/assets/tech-logo/react.svg",
-  "/src/assets/tech-logo/php.svg",
-  "/src/assets/tech-logo/firebase.svg",
-  "/src/assets/tech-logo/laravel.svg",
+  "/posadas-portfolio/assets/tech-logo/javascript.svg",
+  "/posadas-portfolio/assets/tech-logo/react.svg",
+  "/posadas-portfolio/assets/tech-logo/php.svg",
+  "/posadas-portfolio/assets/tech-logo/firebase.svg",
+  "/posadas-portfolio/assets/tech-logo/laravel.svg",
 ];
 
 const LogoSlider: React.FC = () => {

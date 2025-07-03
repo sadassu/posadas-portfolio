@@ -1,28 +1,40 @@
+import useTheme from "./hooks/useTheme";
 import LogoSlider from "./components/LogoSlider";
 import NavigationBar from "./components/NavigationBar";
 import EducationTimeline from "./components/EducationTimeline";
 import Home from "./components/Home";
 import Skills from "./components/Skills";
-import usePreferredTheme from "./hooks/usePreferedTheme.tsx";
+import Footer from "./components/Footer.tsx";
 
 function App() {
-  usePreferredTheme();
+  // Use the custom hook to manage theme state
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="min-h-screen text-gray-800 bg-white dark:bg-gray-900 dark:text-white">
+    <div
+      data-theme={theme}
+      className="min-h-screen text-gray-800 bg-white dark:bg-gray-900 dark:text-white"
+    >
+      <button
+        onClick={toggleTheme}
+        className="fixed top-20 right-10 z-50 p-2 rounded-lg ml-6 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+      >
+        <img
+          src={
+            theme === "light"
+              ? "/posadas-portfolio/assets/sun.svg"
+              : "/posadas-portfolio/assets/moon.svg"
+          }
+          alt="Theme Toggle"
+          className="h-6 w-6"
+        />
+      </button>
       <NavigationBar />
       <Home />
       <LogoSlider />
-      <EducationTimeline />
       <Skills />
-
-      <footer className="bg-gray-100 dark:bg-gray-800 py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">
-            © 2025 Angelo Posadas. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <EducationTimeline />
+      <Footer />
     </div>
   );
 }

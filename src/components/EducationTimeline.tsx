@@ -91,8 +91,8 @@ const EducationTimeline: React.FC = () => {
       </div>
 
       <div className="relative">
-        {/* Vertical Line */}
-        <div className="absolute left-1/2 transform -translate-x-px top-0 bottom-0 w-0.5 bg-blue-300"></div>
+        {/* Vertical Line - Center on desktop, left on mobile */}
+        <div className="absolute left-6 md:left-1/2 md:transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-blue-300"></div>
 
         {educationData.map((entry, index) => {
           const isLeft = index % 2 === 0;
@@ -104,32 +104,34 @@ const EducationTimeline: React.FC = () => {
                 isLeft ? "slide-in-left" : "slide-in-right"
               }`}
             >
-              {/* Timeline Dot */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"></div>
+              {/* Timeline Dot - Left on mobile, center on desktop */}
+              <div className="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"></div>
 
               {/* Content Card */}
               <div
-                className={`w-5/12 bg-white dark:bg-gray-700  rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 
-                  ${isLeft ? "mr-auto" : "ml-auto"}
+                className={`ml-16 md:ml-0 md:w-5/12 bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 
+                  ${isLeft ? "md:mr-auto" : "md:ml-auto"}
                   `}
               >
                 {/* Header */}
                 <div
                   className={`flex flex-col md:flex-row items-start justify-between mb-4
-                    ${isLeft ? "text-left" : "text-right"}
+                    text-left md:${isLeft ? "text-left" : "text-right"}
                     `}
                 >
                   <div
                     className={`flex-1 
-                    ${isLeft ? "order-1" : "order-2"}`}
+                    ${isLeft ? "md:order-1" : "md:order-2"}`}
                   >
                     <h3
                       className={`text-xl font-bold text-gray-800 dark:text-white mb-2 flex items-center 
-                        ${isLeft ? "justify-start" : "justify-end"}
+                        justify-start md:${
+                          isLeft ? "justify-start" : "justify-end"
+                        }
                         `}
                     >
                       <GraduationCap
-                        className={`w-10 h-10 text-blue-600 ${
+                        className={`w-10 h-10 text-blue-600 mr-2 md:${
                           isLeft ? "mr-2" : "ml-2 order-2"
                         }`}
                       />
@@ -139,12 +141,14 @@ const EducationTimeline: React.FC = () => {
                       {entry.institution}
                     </h4>
                     <div
-                      className={`flex items-center text-gray-600 dark:text-gray-200 text-sm mb-2 ${
-                        isLeft ? "justify-start" : "justify-end"
-                      }`}
+                      className={`flex items-center text-gray-600 dark:text-gray-200 text-sm mb-2 
+                        justify-start md:${
+                          isLeft ? "justify-start" : "justify-end"
+                        }
+                      `}
                     >
                       <MapPin
-                        className={`w-4 h-4 ${
+                        className={`w-4 h-4 mr-1 md:${
                           isLeft ? "mr-1" : "ml-1 order-2"
                         }`}
                       />
@@ -154,9 +158,11 @@ const EducationTimeline: React.FC = () => {
 
                   {/* Year Badge */}
                   <div
-                    className={`bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium flex items-center  mb-2 md:mb-0
+                    className={`bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium flex items-center mb-2 md:mb-0
                       ${
-                      isLeft ? "order-2 md:ml-4 md:order-2" : "order-1 md:mr-4 md:order-1"
+                        isLeft
+                          ? "md:order-2 md:ml-4 md:order-2"
+                          : "md:order-1 md:mr-4 md:order-1"
                       }`}
                   >
                     <Calendar className="w-4 h-4 mr-1" />
@@ -167,18 +173,18 @@ const EducationTimeline: React.FC = () => {
                 {/* Description */}
                 {entry.description && (
                   <p
-                    className={`text-gray-700 dark:text-gray-300 mb-4 leading-relaxed ${
-                      isLeft ? "text-left" : "text-right"
-                    }`}
+                    className={`text-gray-700 dark:text-gray-300 mb-4 leading-relaxed 
+                      text-left md:${isLeft ? "text-left" : "text-right"}
+                    `}
                   >
                     {entry.description}
                   </p>
                 )}
 
                 <div
-                  className={`flex flex-wrap gap-4 items-center ${
-                    isLeft ? "justify-start" : "justify-end"
-                  }`}
+                  className={`flex flex-wrap gap-4 items-center 
+                    justify-start md:${isLeft ? "justify-start" : "justify-end"}
+                  `}
                 ></div>
               </div>
             </div>

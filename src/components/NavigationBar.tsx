@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useScrollPosition from "../hooks/useScroll";
 import { useActiveSection } from "../hooks/useActiveSection";
 
 const NavigationBar = () => {
   const [isVisible, setIsVisible] = useState(true);
+
   const scroll = useScrollPosition();
   const icons: Array<{ path: string; id: string }> = [
-    { path: "/src/assets/home.svg", id: "home" },
-    { path: "/src/assets/about.svg", id: "about" },
-    { path: "/src/assets/skills.svg", id: "skills" },
+    { path: "/posadas-portfolio/assets/home.svg", id: "home" },
+    { path: "/posadas-portfolio/assets/skills.svg", id: "skills" },
+    { path: "/posadas-portfolio/assets/about.svg", id: "about" },
   ];
 
   const activeSection = useActiveSection(icons.map((icon) => icon.id));

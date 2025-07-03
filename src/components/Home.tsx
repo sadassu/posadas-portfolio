@@ -15,13 +15,6 @@ const Home = () => {
           </a>
         </div>
       </div>
-      <div className="px-4">
-        <p className="text-lg leading-relaxed max-w-3xl">
-          I'm a passionate Full Stack Developer with expertise in building
-          modern web applications. I enjoy creating elegant solutions to complex
-          problems and am constantly learning new technologies.
-        </p>
-      </div>
     </section>
   );
 };
